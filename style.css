@@ -1,0 +1,133 @@
+body{
+    font-family: Arial, sans-serif;
+    margin:0;
+    background:#f5f5f5;
+}
+
+.container{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    padding:20px;
+    gap:20px;
+}
+
+.produto{
+    background:#ff8ff9;
+    border-radius:10px;
+    width:250px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.2);
+    text-align:center;
+    padding:15px;
+}
+
+.produto img{
+    width:100%;
+    border-radius:10px;
+}
+
+.preco{
+    font-size:20px;
+    font-size: 24px;
+    font-weight: 600;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+}
+
+.botao{
+    display:inline-block;
+    background:#25D366;
+    color:white;
+    padding:10px 15px;
+    border-radius:5px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.botao:hover{
+    background:#1ebe5d;
+}
+
+.cores{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    margin-top:5px;
+}
+
+.cor{
+    width:22px;
+    height:22px;
+    border-radius:50%;
+    cursor:pointer;
+    border:2px solid #ccc;
+    transition:transform 0.2s;
+}
+
+.cor:hover{
+    transform:scale(1.2);
+}
+
+.preto{
+    background:black;
+}
+
+.branco{
+    background:white;
+}
+
+.produto:hover{
+    transform:translateY(-5px);
+    transition:0.2s;
+} /* quando o mouse tá em cima */
+
+
+.nomeProduto{
+   color: #ffffff;
+   font-size: 24px;
+   font-weight: 600;
+   text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+}
+
+.header{
+    background-color: #d87bd3; /* mesma cor do card */
+    color: white;
+    padding: 20px 40px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.header h1{
+    margin: 0;
+    font-size: 28px;
+}
+
+.header p{
+    margin: 0;
+    font-size: 14px;
+}
+
+#modoNoturno{
+    background: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+body.dark{
+    background-color: #1c1c1c;
+    color: white;
+}
+
+body.dark .produto{
+    background-color: #2a2a2a;
+}
+
+body.dark .header{
+    background-color: #111;
+}
