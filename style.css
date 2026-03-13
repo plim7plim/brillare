@@ -1,8 +1,43 @@
+/* ===== RESET / BASE ===== */
+
 body{
-    font-family: Arial, sans-serif;
     margin:0;
-    background:#f5f5f5;
+    font-family: Arial, sans-serif;
+    background: radial-gradient(circle at top, #f4d6f2, #ececec);
 }
+
+/* ===== HEADER ===== */
+
+.header{
+    background:#d87bd3;
+    color:white;
+    padding:20px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow:0 4px 10px rgba(0,0,0,0.2);
+}
+
+.header h1{
+    margin:0;
+    font-size:28px;
+}
+
+.header p{
+    margin:0;
+    font-size:14px;
+}
+
+#modoNoturno{
+    background:white;
+    border:none;
+    padding:10px 15px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:18px;
+}
+
+/* ===== CONTAINER ===== */
 
 .container{
     display:flex;
@@ -12,26 +47,50 @@ body{
     gap:20px;
 }
 
+/* ===== PRODUTOS ===== */
+
 .produto{
-    background:#ff8ff9;
-    border-radius:10px;
     width:250px;
-    box-shadow:0 2px 8px rgba(0,0,0,0.2);
-    text-align:center;
+    background:#d87bd3;
+    border-radius:12px;
     padding:15px;
+    text-align:center;
+    box-shadow:0 8px 20px rgba(0,0,0,0.15);
+    transition:transform 0.3s;
+}
+
+.produto:hover{
+    transform:translateY(-5px);
 }
 
 .produto img{
     width:100%;
+    height:250px;
+    object-fit:cover;
     border-radius:10px;
+    transition:transform 0.4s;
+}
+
+.produto:hover img{
+    transform:scale(1.08);
+}
+
+/* ===== TEXTO ===== */
+
+.nomeProduto{
+    color:white;
+    font-size:24px;
+    font-weight:600;
+    text-shadow:0 2px 4px rgba(0,0,0,0.4);
 }
 
 .preco{
-    font-size:20px;
-    font-size: 24px;
-    font-weight: 600;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+    font-size:24px;
+    font-weight:600;
+    text-shadow:0 2px 4px rgba(0,0,0,0.4);
 }
+
+/* ===== BOTÃO ===== */
 
 .botao{
     display:inline-block;
@@ -46,6 +105,8 @@ body{
 .botao:hover{
     background:#1ebe5d;
 }
+
+/* ===== CORES PRODUTO ===== */
 
 .cores{
     display:flex;
@@ -67,67 +128,47 @@ body{
     transform:scale(1.2);
 }
 
-.preto{
-    background:black;
-}
+.preto{ background:black; }
+.branco{ background:white; }
 
-.branco{
-    background:white;
-}
+/* ===== WHATSAPP FIXO (CELULAR) ===== */
 
-.produto:hover{
-    transform:translateY(-5px);
-    transition:0.2s;
-} /* quando o mouse tá em cima */
+.whatsapp-fixo{
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
 
+    width: 60px;
+    height: 60px;
 
-.nomeProduto{
-   color: #ffffff;
-   font-size: 24px;
-   font-weight: 600;
-   text-shadow: 0 2px 4px rgba(0,0,0,0.4);
-}
-
-.header{
-    background-color: #d87bd3; /* mesma cor do card */
+    background: #25D366;
     color: white;
-    padding: 20px 40px;
+
+    border-radius: 50%;
 
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
 
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    font-size: 30px;
+
+    text-decoration: none;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+
+    z-index: 1000;
 }
 
-.header h1{
-    margin: 0;
-    font-size: 28px;
-}
-
-.header p{
-    margin: 0;
-    font-size: 14px;
-}
-
-#modoNoturno{
-    background: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 18px;
-}
+/* ===== MODO NOTURNO ===== */
 
 body.dark{
-    background-color: #1c1c1c;
-    color: white;
+    background:#1c1c1c;
+    color:white;
 }
 
 body.dark .produto{
-    background-color: #2a2a2a;
+    background:#2a2a2a;
 }
 
 body.dark .header{
-    background-color: #111;
+    background:#111;
 }
