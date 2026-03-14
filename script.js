@@ -98,3 +98,14 @@ let url="https://wa.me/5562999230895?text="+mensagem;
 window.open(url,"_blank");
 
 }
+
+// botão fechar carrinho
+document.getElementById("fecharCarrinho").addEventListener("click", () => {
+    document.getElementById("carrinhoPreview").classList.remove("ativo");
+});
+
+// função que abre o carrinho
+function toggleCarrinho(){
+    const carrinhoBox = document.getElementById("carrinhoPreview");
+    carrinhoBox.classList.toggle("ativo");
+}
