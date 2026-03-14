@@ -2,10 +2,14 @@ function trocarBolsa(novaImagem){
     document.getElementById("bolsa").src = novaImagem;
 }
 
+document.addEventListener("DOMContentLoaded", () => {
+
 const botao = document.getElementById("modoNoturno");
 
 botao.addEventListener("click", () => {
-    document.body.classList.toggle("dark");
+document.body.classList.toggle("dark");
+});
+
 });
 
 let carrinho = [];
