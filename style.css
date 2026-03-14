@@ -1,9 +1,12 @@
-/* ===== RESET / BASE ===== */
 
 body{
     margin:0;
-    font-family: Arial, sans-serif;
-    background: radial-gradient(circle at top, #f4d6f2, #ececec);
+    font-family:Arial, sans-serif;
+    background:radial-gradient(circle at top,#f4d6f2,#ececec);
+
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
 }
 
 /* ===== HEADER ===== */
@@ -15,18 +18,11 @@ body{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    box-shadow:0 4px 10px rgba(0,0,0,0.2);
+    box-shadow:0 4px 10px rgba(0,0,0,.2);
 }
 
-.header h1{
-    margin:0;
-    font-size:28px;
-}
-
-.header p{
-    margin:0;
-    font-size:14px;
-}
+.header h1{margin:0;font-size:28px;}
+.header p{margin:0;font-size:14px;}
 
 #modoNoturno{
     background:white;
@@ -43,67 +39,70 @@ body{
     display:flex;
     flex-wrap:wrap;
     justify-content:center;
-    padding:20px;
     gap:20px;
+    padding:20px;
 }
 
 /* ===== PRODUTOS ===== */
 
 .produto{
-    width:250px;
+    width:100%;
+    max-width:250px;
     background:#d87bd3;
     border-radius:12px;
     padding:15px;
     text-align:center;
-    box-shadow:0 8px 20px rgba(0,0,0,0.15);
-    transition:transform 0.3s;
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
+    transition:.3s;
 }
 
-.produto:hover{
-    transform:translateY(-5px);
-}
+.produto:hover{transform:translateY(-5px);}
 
 .produto img{
     width:100%;
     height:250px;
     object-fit:cover;
     border-radius:10px;
-    transition:transform 0.4s;
+    transition:.4s;
 }
 
-.produto:hover img{
-    transform:scale(1.08);
-}
+.produto:hover img{transform:scale(1.08);}
 
 /* ===== TEXTO ===== */
 
-.nomeProduto{
-    color:white;
-    font-size:24px;
-    font-weight:600;
-    text-shadow:0 2px 4px rgba(0,0,0,0.4);
-}
-
+.nomeProduto,
 .preco{
     font-size:24px;
     font-weight:600;
-    text-shadow:0 2px 4px rgba(0,0,0,0.4);
+    text-shadow:0 2px 4px rgba(0,0,0,.4);
 }
 
-/* ===== BOTÃO ===== */
+.nomeProduto{color:white;}
 
-.botao{
-    display:inline-block;
+/* ===== BOTÕES ===== */
+
+.botao,
+.botao-finalizar{
     background:#25D366;
     color:white;
+    border:none;
     padding:10px 15px;
     border-radius:5px;
-    text-decoration:none;
     font-weight:bold;
+    cursor:pointer;
+    text-decoration:none;
 }
 
-.botao:hover{
-    background:#1ebe5d;
+.botao-finalizar{
+    padding:15px 25px;
+    font-size:18px;
+}
+
+.botao:hover{background:#1ebe5d;}
+
+.finalizar{
+    text-align:center;
+    margin:40px;
 }
 
 /* ===== CORES PRODUTO ===== */
@@ -119,43 +118,56 @@ body{
     width:22px;
     height:22px;
     border-radius:50%;
-    cursor:pointer;
     border:2px solid #ccc;
-    transition:transform 0.2s;
+    cursor:pointer;
+    transition:.2s;
 }
 
-.cor:hover{
-    transform:scale(1.2);
-}
+.cor:hover{transform:scale(1.2);}
 
-.preto{ background:black; }
-.branco{ background:white; }
+.preto{background:black;}
+.branco{background:white;}
 
-/* ===== WHATSAPP FIXO (CELULAR) ===== */
+/* ===== WHATSAPP FIXO ===== */
 
 .whatsapp-fixo{
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
+    position:fixed;
+    bottom:100px;   /* antes era 25px */
+    right:25px;
+    width:60px;
+    height:60px;
+    background:#25D366;
+    color:white;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:30px;
+    text-decoration:none;
+    box-shadow:0 6px 15px rgba(0,0,0,.3);
+    z-index:1000;
+}
 
-    width: 60px;
-    height: 60px;
+/* ===== NOTIFICAÇÃO ===== */
 
-    background: #25D366;
-    color: white;
+#notificacao{
+    position:fixed;
+    bottom:100px;
+    right:25px;
+    background:#25D366;
+    color:white;
+    padding:12px 20px;
+    border-radius:8px;
+    font-weight:bold;
+    opacity:0;
+    transform:translateY(20px);
+    transition:.3s;
+    box-shadow:0 6px 15px rgba(0,0,0,.3);
+}
 
-    border-radius: 50%;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    font-size: 30px;
-
-    text-decoration: none;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
-
-    z-index: 1000;
+#notificacao.mostrar{
+    opacity:1;
+    transform:translateY(0);
 }
 
 /* ===== MODO NOTURNO ===== */
@@ -165,10 +177,95 @@ body.dark{
     color:white;
 }
 
-body.dark .produto{
-    background:#2a2a2a;
+body.dark .produto{background:#2a2a2a;}
+body.dark .header{background:#111;}
+
+
+.acoes-header{
+    display:flex;
+    align-items:center;
+    gap:20px;
+}
+#carrinhoPreview{
+
+    position: fixed;
+    top: 80px;
+    right: 20px;
+
+    width: 260px;
+
+    background: white;
+    padding: 20px;
+
+    border-radius: 10px;
+
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+
+    display: none;
+
+    z-index: 1000;
 }
 
-body.dark .header{
+#carrinhoPreview.ativo{
+    display: block;
+}
+
+#listaCarrinho{
+    margin:10px 0;
+}
+
+.itemCarrinho{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:8px;
+}
+
+.remover{
+    background:red;
+    border:none;
+    color:white;
+    border-radius:4px;
+    cursor:pointer;
+    padding:2px 6px;
+}
+
+body.dark #carrinhoPreview{
+    background:#2a2a2a;
+    color:white;
+}
+
+body.dark #listaCarrinho{
+    color:white;
+}
+
+body.dark #totalCarrinho{
+    color:white;
+}
+
+.footer{
     background:#111;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:auto;
+}
+
+.footer p{
+    margin:0 0 10px 0;
+}
+
+.redes{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+}
+
+.redes a{
+    color:white;
+    font-size:22px;
+    transition:0.3s;
+}
+
+.redes a:hover{
+    color:#25D366;
 }

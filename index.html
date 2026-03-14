@@ -1,7 +1,8 @@
-<!DOCTYPE html>
+
 <html lang="pt-BR">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -9,22 +10,37 @@
 
 <link rel="stylesheet" href="style.css">
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 </head>
 
 <body>
 
+<!-- HEADER -->
+
 <header class="header">
 
     <div class="titulo">
         <h1>Brillare Jóias</h1>
-        <p>Elegância e brilho para todos os momentos! ✨</p>
+        <p>Elegância e brilho para todos os momentos ✨</p>
     </div>
 
-    <button id="modoNoturno">🌙</button>
+    <div class="acoes-header">
+
+        <button id="modoNoturno">🌙</button>
+
+        <div class="carrinho-icone" onclick="toggleCarrinho()">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span id="contadorCarrinho">0</span>
+        </div>
+
+    </div>
 
 </header>
+
+
+<!-- PRODUTOS -->
 
 <div class="container">
 
@@ -34,27 +50,30 @@
         <img src="./images/bolsaSimples.jpg" alt="Bolsa">
 
         <h3 class="nomeProduto">Bolsa</h3>
+
         <p class="preco">R$ 60,00</p>
 
-        <a class="botao" href="#">Comprar no WhatsApp</a>
+        <button class="botao"
+        onclick="adicionarCarrinho('Bolsa',60)">
+        Adicionar ao Carrinho
+        </button>
 
     </div>
 
 
-     
-
     <!-- PRODUTO 2 -->
     <div class="produto">
 
-        <img src="images/correntes.jpg">
+        <img src="images/correntes.jpg" alt="Correntinha">
 
         <h3 class="nomeProduto">Correntinha</h3>
+
         <p class="preco">R$ 120,00</p>
 
-        <a class="botao"
-        href="https://wa.me/5562999230895?text=Olá%20tenho%20interesse%20na corrente de 120 reais!">
-        Comprar no WhatsApp
-        </a>
+        <button class="botao"
+        onclick="adicionarCarrinho('Correntinha',120)">
+        Adicionar ao Carrinho
+        </button>
 
     </div>
 
@@ -62,25 +81,76 @@
     <!-- PRODUTO 3 -->
     <div class="produto">
 
-        <img src="images/colarFeminino.jpg">
+        <img src="images/colarFeminino.jpg" alt="Colar Feminino">
 
         <h3 class="nomeProduto">Colar Feminino</h3>
+
         <p class="preco">R$ 95,00</p>
 
-        <a class="botao"
-        href="https://wa.me/5562999230895?text=Olá%20tenho%20interesse%20no%20Cinto%20Masculino">
-        Comprar no WhatsApp
-        </a>
+        <button class="botao"
+        onclick="adicionarCarrinho('Colar Feminino',95)">
+        Adicionar ao Carrinho
+        </button>
 
     </div>
 
 </div>
 
-<a href="https://wa.me/5562999230895" class="whatsapp-fixo" target="_blank">
+
+<!-- PREVIEW DO CARRINHO -->
+
+<div id="carrinhoPreview">
+
+<h3>🛒 Seu Carrinho</h3>
+
+<div id="listaCarrinho"></div>
+
+<p id="totalCarrinho">Total: R$ 0</p>
+
+<button onclick="finalizarCompra()" class="botao-finalizar">
+Finalizar no WhatsApp
+</button>
+
+</div>
+
+
+<!-- BOTÃO WHATSAPP FLUTUANTE -->
+
+<a href="https://wa.me/5562999230895"
+class="whatsapp-fixo"
+target="_blank">
+
 <i class="fa-brands fa-whatsapp"></i>
+
 </a>
 
+
+<!-- NOTIFICAÇÃO -->
+
+<div id="notificacao"></div>
+
+
 <script src="script.js"></script>
+
+<footer class="footer">
+
+    <p>
+        Desenvolvido por <strong>Plínio Peixoto dos Santos</strong>
+    </p>
+
+    <div class="redes">
+
+        <a href="https://wa.me/5562998406502" target="_blank">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+
+        <a href="https://instagram.com/pliniops_" target="_blank">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+
+    </div>
+
+</footer>
 
 </body>
 </html>
