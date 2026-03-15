@@ -208,6 +208,7 @@ body.dark #carrinhoPreview{
     flex-direction:column;
     align-items:flex-start;
     gap:10px;
+    padding:10px 15px; /* diminui o tamanho do header */
   }
 
   .acoes-header{
@@ -216,9 +217,10 @@ body.dark #carrinhoPreview{
     margin-top:10px;
   }
 
-  .whatsapp-fixo{
-    bottom:80px;
-  }
+.whatsapp-fixo{
+  bottom:50px;
+  right:10px;
+}
 
   #fecharCarrinho{
     width:30px;
