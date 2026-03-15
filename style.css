@@ -39,6 +39,7 @@ body{
   justify-content:center;
   gap:20px;
   padding:20px;
+  padding-bottom:100px; /* espaço para o botão do whatsapp */
 }
 
 .produto{
@@ -138,6 +139,7 @@ body{
   text-align:center;
   z-index:1100;
 }
+
 #fecharCarrinho:hover{
   background:#c00000;
 }
@@ -145,7 +147,7 @@ body{
 /* WHATSAPP */
 .whatsapp-fixo{
   position:fixed;
-  bottom:120px;
+  bottom:140px; /* ALTURA DO ZAP */
   right:25px;
   width:60px;
   height:60px;
@@ -157,8 +159,8 @@ body{
   align-items:center;
   font-size:30px;
   text-decoration:none;
+  box-shadow:0 6px 15px rgba(0,0,0,.3);
 }
-
 /* NOTIFICAÇÃO */
 #notificacao{
   position:fixed;
@@ -172,6 +174,7 @@ body{
   transform:translateY(-20px);
   transition:.3s;
 }
+
 #notificacao.mostrar{
   opacity:1;
   transform:translateY(0);
@@ -191,12 +194,15 @@ body.dark{
   background:#1c1c1c;
   color:white;
 }
+
 body.dark .produto{
   background:#2a2a2a;
 }
+
 body.dark .header{
   background:#111;
 }
+
 body.dark #carrinhoPreview{
   background:#2a2a2a;
   color:white;
@@ -204,23 +210,37 @@ body.dark #carrinhoPreview{
 
 /* MOBILE */
 @media (max-width:600px){
+
   .header{
     flex-direction:column;
     align-items:flex-start;
-    gap:10px;
-    padding:10px 15px; /* diminui o tamanho do header */
+    gap:5px;
+    padding:8px 12px;
+  }
+
+  .titulo h1{
+    font-size:22px;
+    margin:0;
+  }
+
+  .titulo p{
+    font-size:14px;
+    margin:0;
   }
 
   .acoes-header{
     width:100%;
     justify-content:space-between;
-    margin-top:10px;
+    margin-top:5px;
   }
 
-.whatsapp-fixo{
-  bottom:50px;
-  right:10px;
-}
+  .whatsapp-fixo{
+    bottom:20px;
+    right:10px;
+    width:50px;
+    height:50px;
+    font-size:24px;
+  }
 
   #fecharCarrinho{
     width:30px;
@@ -229,4 +249,5 @@ body.dark #carrinhoPreview{
     top:15px;
     right:15px;
   }
+
 }
