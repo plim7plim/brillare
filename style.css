@@ -39,7 +39,7 @@ body{
   justify-content:center;
   gap:20px;
   padding:20px;
-  padding-bottom:100px; /* espaço para o botão do whatsapp */
+  padding-bottom:220px; /* espaço para o botão do WhatsApp */
 }
 
 .produto{
@@ -147,7 +147,7 @@ body{
 /* WHATSAPP */
 .whatsapp-fixo{
   position:fixed;
-  bottom:140px; /* ALTURA DO ZAP */
+  bottom:140px;
   right:25px;
   width:60px;
   height:60px;
@@ -161,6 +161,7 @@ body{
   text-decoration:none;
   box-shadow:0 6px 15px rgba(0,0,0,.3);
 }
+
 /* NOTIFICAÇÃO */
 #notificacao{
   position:fixed;
@@ -235,8 +236,8 @@ body.dark #carrinhoPreview{
   }
 
   .whatsapp-fixo{
-    bottom:20px;
-    right:10px;
+    bottom:90px;
+    right:12px;
     width:50px;
     height:50px;
     font-size:24px;
@@ -250,4 +251,24 @@ body.dark #carrinhoPreview{
     right:15px;
   }
 
+  /* PRODUTOS NO CELULAR */
+  .container{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:15px;
+    padding-bottom:200px; /* evita o WhatsApp cobrir produtos */
+  }
+
+  .produto{
+    width:92%;
+    max-width:320px;
+    padding:14px;
+  }
+
+  .produto img{
+  width:100%;
+  height:auto;
+  border-radius:10px;
+}
 }
