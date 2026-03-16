@@ -182,12 +182,14 @@ body{
 }
 
 /* FOOTER */
+/* FOOTER */
 .footer{
-  background:#111;
+  background:#b56fc1; /* roxo claro que combina com o site */
   color:white;
   text-align:center;
   padding:20px;
   margin-top:auto;
+  transition:.3s;
 }
 
 /* DARK MODE */
@@ -209,6 +211,9 @@ body.dark #carrinhoPreview{
   color:white;
 }
 
+body.dark .footer{
+  background:#2a1b2f; /* roxo escuro para dark mode */
+}
 /* MOBILE */
 @media (max-width:600px){
 
