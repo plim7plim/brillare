@@ -91,7 +91,7 @@ function finalizarCompra() {
     if (carrinho.length === 0) {
         alert("Carrinho vazio");
         return;
-    }
+    } //trava se tiver vazio 
 
     let mensagem = "Olá! Gostaria de comprar:%0A%0A";
 
