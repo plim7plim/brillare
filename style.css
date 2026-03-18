@@ -248,6 +248,53 @@ body.dark .footer{
   background:#2a1b2f;
 }
 
+
+.footer{
+  background:#b56fc1;
+  color:white;
+  text-align:center;
+  padding:25px 20px;
+  margin-top:auto;
+  transition:.3s;
+}
+
+.footer p{
+  margin:0;
+  font-size:15px;
+}
+
+/* REDES */
+.redes{
+  margin-top:10px;
+  display:flex;
+  justify-content:center;
+  gap:15px;
+}
+
+.redes a{
+  color:white;
+  font-size:22px;
+  transition:.3s;
+}
+
+/* HOVER BONITO */
+.redes a:hover{
+  transform:scale(1.2);
+}
+
+.redes a .fa-whatsapp:hover{
+  color:#25D366;
+}
+
+.redes a .fa-instagram:hover{
+  color:#E4405F;
+}
+
+/* DARK MODE FOOTER */
+body.dark .footer{
+  background:#2a1b2f;
+}
+
 /* MOBILE */
 @media (max-width:600px){
 
