@@ -1,53 +1,48 @@
 let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
 
 document.addEventListener("DOMContentLoaded", () => {
-    // Modo noturno
-    const botao = document.getElementById("modoNoturno");
-    botao.addEventListener("click", () => {
+
+    // DARK MODE
+    document.getElementById("modoNoturno").addEventListener("click", () => {
         document.body.classList.toggle("dark");
     });
 
-    // Atualiza o carrinho ao carregar a página
     atualizarCarrinho();
 
-    // Fechar carrinho
     document.getElementById("fecharCarrinho").addEventListener("click", () => {
         document.getElementById("carrinhoPreview").classList.remove("ativo");
     });
 });
 
-// Função para abrir/fechar carrinho
+// CARRINHO
 function toggleCarrinho() {
-    const carrinhoBox = document.getElementById("carrinhoPreview");
-    carrinhoBox.classList.toggle("ativo");
+    document.getElementById("carrinhoPreview").classList.toggle("ativo");
 }
 
-// Função de notificação
+// NOTIFICAÇÃO
 function mostrarNotificacao(texto) {
-    const notificacao = document.getElementById("notificacao");
-    notificacao.innerText = texto;
-    notificacao.classList.add("mostrar");
+    const n = document.getElementById("notificacao");
+    n.innerText = texto;
+    n.classList.add("mostrar");
 
-    setTimeout(() => {
-        notificacao.classList.remove("mostrar");
-    }, 2000);
+    setTimeout(() => n.classList.remove("mostrar"), 2000);
 }
 
-// Adiciona produto ao carrinho com controle de quantidade
+// ADD
 function adicionarCarrinho(nome, preco) {
-    const produtoExistente = carrinho.find(p => p.nome === nome);
+    const existente = carrinho.find(p => p.nome === nome);
 
-    if (produtoExistente) {
-        produtoExistente.quantidade += 1;
+    if (existente) {
+        existente.quantidade++;
     } else {
         carrinho.push({ nome, preco, quantidade: 1 });
     }
 
     atualizarCarrinho();
-    mostrarNotificacao(nome + " adicionado ao carrinho");
+    mostrarNotificacao(nome + " adicionado");
 }
 
-// Atualiza o carrinho
+// UPDATE
 function atualizarCarrinho() {
     const lista = document.getElementById("listaCarrinho");
     const contador = document.getElementById("contadorCarrinho");
@@ -57,48 +52,70 @@ function atualizarCarrinho() {
 
     let soma = 0;
 
-    carrinho.forEach((produto, index) => {
-        soma += produto.preco * produto.quantidade;
+    carrinho.forEach((p, i) => {
+        soma += p.preco * p.quantidade;
 
         const item = document.createElement("div");
         item.innerHTML = `
-            ${produto.nome} - R$ ${produto.preco.toFixed(2)} x ${produto.quantidade}
-            <button onclick="removerItem(${index})">❌</button>
+            ${p.nome} - R$ ${p.preco.toFixed(2)} x ${p.quantidade}
+            <button onclick="removerItem(${i})">❌</button>
         `;
 
         lista.appendChild(item);
     });
 
-    // Contador total de produtos
-    contador.innerText = carrinho.reduce((acc, p) => acc + p.quantidade, 0);
+    contador.innerText = carrinho.reduce((a, p) => a + p.quantidade, 0);
     total.innerText = "Total: R$ " + soma.toFixed(2);
 
     localStorage.setItem("carrinho", JSON.stringify(carrinho));
 }
 
-// Remove 1 unidade do produto ou remove do carrinho se quantidade = 1
-function removerItem(index) {
-    if (carrinho[index].quantidade > 1) {
-        carrinho[index].quantidade -= 1;
+// REMOVE
+function removerItem(i) {
+    if (carrinho[i].quantidade > 1) {
+        carrinho[i].quantidade--;
     } else {
-        carrinho.splice(index, 1);
+        carrinho.splice(i, 1);
     }
     atualizarCarrinho();
 }
 
-// Finaliza compra via WhatsApp
+// FINALIZAR
 function finalizarCompra() {
-    if (carrinho.length === 0) {
-        alert("Carrinho vazio");
-        return;
-    } //trava se tiver vazio 
+    if (carrinho.length === 0) return alert("Carrinho vazio");
 
-    let mensagem = "Olá! Gostaria de comprar:%0A%0A";
+    let msg = "Olá! Quero comprar:%0A%0A";
 
-    carrinho.forEach(produto => {
-        mensagem += `- ${produto.nome} x ${produto.quantidade} R$ ${produto.preco.toFixed(2)}%0A`;
+    carrinho.forEach(p => {
+        msg += `- ${p.nome} x${p.quantidade} R$ ${p.preco}%0A`;
     });
 
-    const url = "https://wa.me/5562999230895?text=" + mensagem;
-    window.open(url, "_blank");
+    window.open("https://wa.me/5562999230895?text=" + msg);
+}
+
+
+// FILTRO
+function filtrar(cat){
+
+    const acessorios = document.querySelector('.acessorios');
+    const bolsas = document.querySelector('.bolsas');
+    const botoes = document.querySelectorAll('.filtros button');
+
+    botoes.forEach(b => b.classList.remove("ativo"));
+    event.target.classList.add("ativo");
+
+    if(cat === "todos"){
+        acessorios.style.display = "block";
+        bolsas.style.display = "block";
+    }
+
+    if(cat === "acessorios"){
+        acessorios.style.display = "block";
+        bolsas.style.display = "none";
+    }
+
+    if(cat === "bolsas"){
+        acessorios.style.display = "none";
+        bolsas.style.display = "block";
+    }
 }

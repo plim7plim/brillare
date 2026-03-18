@@ -1,178 +1,171 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Brillare Jóias | Catálogo de Acessórios Femininos</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Brillare Jóias | Catálogo</title>
 
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
-<link rel="icon" type="image/png" href="images/brillare.jpg"> 
+  <link rel="icon" type="image/png" href="images/brillare.jpg"/>
 </head>
 
 <body>
 
 <header class="header">
 
+  <div class="titulo">
+    <h1>Brillare Jóias</h1>
+    <p>Elegância e brilho para todos os momentos ✨</p>
+  </div>
 
+  <div class="acoes-header">
 
-  
+    <button id="modoNoturno">🌙</button>
 
-    <div class="titulo">
-      <h1>Brillare Jóias</h1>
-      <p>Elegância e brilho para todos os momentos ✨</p>
+    <!-- FILTRO -->
+    <div class="filtros">
+      <button onclick="filtrar('todos')">Todos</button>
+      <button onclick="filtrar('acessorios')">Acessórios</button>
+      <button onclick="filtrar('bolsas')">Bolsas</button>
     </div>
 
-    <div class="acoes-header">
-
-      <button id="modoNoturno">🌙</button>
-
-      <div class="carrinho-icone" onclick="toggleCarrinho()">
-        <i class="fa-solid fa-cart-shopping"></i>
-        <span id="contadorCarrinho">0</span>
-      </div>
-
-    </div>
-
-  </header>
-
-
-  <div class="container"> <!--Layout começa aq, correntes e prata ....... -->
-    <div class="acessorios"></div>
-      <h3>Acessórios:</h3>
-      <div class="produto">
-        <img src="images/pulseiraMinima.jpg">
-        <h3 class="nomeProduto"> Pulseira Minimalista</h3>
-        <p class="preco">R$ 60</p>
-        <button class="botao" onclick="adicionarCarrinho('Pulseira Minimalista',60)">Adicionar ao Carrinho</button>
-      </div>
-
-      <div class="produto">
-        <img src="images/pulseiraFolha.jpg">
-        <h3 class="nomeProduto"> Pulseira Formato de folha</h3>
-        <p class="preco">R$ 95</p>
-        <button class="botao" onclick="adicionarCarrinho('Pulseira Formato de folha',95)">Adicionar ao Carrinho</button>
-      </div>
-
-      <div class="produto">
-        <img src="images/correntes.jpg">
-        <h3 class="nomeProduto">Correntinha</h3>
-        <p class="preco">R$ 120</p>
-        <button class="botao" onclick="adicionarCarrinho('Correntinha',120)">Adicionar ao Carrinho</button>
-      </div>
-
-      <div class="produto">
-        <img src="images/colarFeminino.jpg">
-        <h3 class="nomeProduto">Colar Feminino</h3>
-        <p class="preco">R$ 95</p>
-        <button class="botao" onclick="adicionarCarrinho('Colar Feminino',95)">Adicionar ao Carrinho</button>
-      </div>
-
-      <div class="produto">
-        <img src="images/brincoCoroa.png">
-        <h3 class="nomeProduto">Brinco de Coroa</h3>
-        <p class="preco">R$ 95</p>
-        <button class="botao" onclick="adicionarCarrinho('Brinco Coroa',95)">Adicionar ao Carrinho</button>
-      </div>
-
-    </div>
-  
-    
-    <div class = "bolsas">
-      <h3>Bolsas:</h3>
-
-    <div class="produto">
-      <img src="images/bolsaAlca.jpg">
-      <h3 class="nomeProduto">Bolsa com Alça </h3>
-      <p class="preco">R$ 95</p>
-      <button class="botao" onclick="adicionarCarrinho('Bolsa com alça',95)">Adicionar ao Carrinho</button>
-    </div>
-
-    <div class="produto">
-      <img src="images/bolsaBabada.jpg">
-      <h3 class="nomeProduto">Bolsa Glamour</h3>
-      <p class="preco">R$ 95</p>
-      <button class="botao" onclick="adicionarCarrinho('Bolsa Glamour',95)">Adicionar ao Carrinho</button>
-    </div>
-    
-    <div class="produto">
-      <img src="images/bolsaCarteira.jpg">
-      <h3 class="nomeProduto">Bolsa com Carteira </h3>
-      <p class="preco">R$ 95</p>
-      <button class="botao" onclick="adicionarCarrinho('Bolsa Com carteira',95)">Adicionar ao Carrinho</button>
-    </div>
-
-    <div class="produto">
-      <img src="images/bolsaCorrente.jpg">
-      <h3 class="nomeProduto">Bolsa Corrente Lux  </h3>
-      <p class="preco">R$ 95</p>
-      <button class="botao" onclick="adicionarCarrinho('Bolsa Corrente Lux',95)">Adicionar ao Carrinho</button>
-    </div>
-
-    <div class="produto">
-      <img src="images/bolsaMao.jpg">
-      <h3 class="nomeProduto">Bolsa de Mão Clássica  </h3>
-      <p class="preco">R$ 95</p>
-      <button class="botao" onclick="adicionarCarrinho('Bolsa de Mão Clássica',95)">Adicionar ao Carrinho</button>
-    </div>
-
-    <div class="produto">
-      <img src="images/bolsaPrata.jpg">
-      <h3 class="nomeProduto">Bolsa Prata Glam </h3>
-      <p class="preco">R$ 95</p>
-      <button class="botao" onclick="adicionarCarrinho('Bolsa Prata Glam',95)">Adicionar ao Carrinho</button>
-    </div>
-
-   <div class="produto">
-      <img src="images/bolsasMulti.jpg">
-      <h3 class="nomeProduto">Bolsa Preta </h3> <!--SO TEM NA COR PRETA AINDA CULPA DA ISABELLYYYYYY-->
-      <p class="preco">R$ 95</p>
-      <button class="botao" onclick="adicionarCarrinho('Bolsa Preta',95)">Adicionar ao Carrinho</button>
-    </div>
-
-    <div class="produto">
-      <img src="images/bolsaInfantil.jpg">
-      <h3 class="nomeProduto">Bolsa Infantil </h3> 
-      <p class="preco">R$ 95</p>
-      <button class="botao" onclick="adicionarCarrinho('Bolsa Infantil',95)">Adicionar ao Carrinho</button>
+    <div class="carrinho-icone" onclick="toggleCarrinho()">
+      <i class="fa-solid fa-cart-shopping"></i>
+      <span id="contadorCarrinho">0</span>
     </div>
 
   </div>
+</header>
 
+
+<!-- ACESSÓRIOS -->
+<div class="secao acessorios">
+  <h3 class="titulo-secao">Acessórios</h3>
+
+  <div class="container">
+
+    <div class="produto">
+      <img src="images/pulseiraMinima.jpg"/>
+      <h3 class="nomeProduto">Pulseira Minimalista</h3>
+      <p class="preco">R$ 60</p>
+      <button class="botao" onclick="adicionarCarrinho('Pulseira Minimalista', 60)">Adicionar</button>
+    </div>
+
+    <div class="produto">
+      <img src="images/pulseiraFolha.jpg"/>
+      <h3 class="nomeProduto">Pulseira Formato de folha</h3>
+      <p class="preco">R$ 95</p>
+      <button class="botao" onclick="adicionarCarrinho('Pulseira Formato de folha', 95)">Adicionar</button>
+    </div>
+
+    <div class="produto">
+      <img src="images/correntes.jpg"/>
+      <h3 class="nomeProduto">Correntinha</h3>
+      <p class="preco">R$ 120</p>
+      <button class="botao" onclick="adicionarCarrinho('Correntinha', 120)">Adicionar</button>
+    </div>
+
+    <div class="produto">
+      <img src="images/colarFeminino.jpg"/>
+      <h3 class="nomeProduto">Colar Feminino</h3>
+      <p class="preco">R$ 95</p>
+      <button class="botao" onclick="adicionarCarrinho('Colar Feminino', 95)">Adicionar</button>
+    </div>
+
+    <div class="produto">
+      <img src="images/brincoCoroa.png"/>
+      <h3 class="nomeProduto">Brinco de Coroa</h3>
+      <p class="preco">R$ 95</p>
+      <button class="botao" onclick="adicionarCarrinho('Brinco Coroa', 95)">Adicionar</button>
+    </div>
+
+  </div>
 </div>
 
-<!-- Carrinho -->
+
+<!-- BOLSAS -->
+<div class="secao bolsas">
+  <h3 class="titulo-secao">Bolsas</h3>
+
+  <div class="container">
+
+    <div class="produto">
+      <img src="images/bolsaAlca.jpg"/>
+      <h3 class="nomeProduto">Bolsa com Alça</h3>
+      <p class="preco">R$ 95</p>
+      <button class="botao" onclick="adicionarCarrinho('Bolsa com alça', 95)">Adicionar</button>
+    </div>
+
+    <div class="produto">
+      <img src="images/bolsaBabada.jpg"/>
+      <h3 class="nomeProduto">Bolsa Glamour</h3>
+      <p class="preco">R$ 95</p>
+      <button class="botao" onclick="adicionarCarrinho('Bolsa Glamour', 95)">Adicionar</button>
+    </div>
+
+    <div class="produto">
+      <img src="images/bolsaCarteira.jpg"/>
+      <h3 class="nomeProduto">Bolsa com Carteira</h3>
+      <p class="preco">R$ 95</p>
+      <button class="botao" onclick="adicionarCarrinho('Bolsa Com carteira', 95)">Adicionar</button>
+    </div>
+
+    <div class="produto">
+      <img src="images/bolsaCorrente.jpg"/>
+      <h3 class="nomeProduto">Bolsa Corrente Lux</h3>
+      <p class="preco">R$ 95</p>
+      <button class="botao" onclick="adicionarCarrinho('Bolsa Corrente Lux', 95)">Adicionar</button>
+    </div>
+
+    <div class="produto">
+      <img src="images/bolsaMao.jpg"/>
+      <h3 class="nomeProduto">Bolsa de Mão Clássica</h3>
+      <p class="preco">R$ 95</p>
+      <button class="botao" onclick="adicionarCarrinho('Bolsa de Mão Clássica', 95)">Adicionar</button>
+    </div>
+
+    <div class="produto">
+      <img src="images/bolsaPrata.jpg"/>
+      <h3 class="nomeProduto">Bolsa Prata Glam</h3>
+      <p class="preco">R$ 95</p>
+      <button class="botao" onclick="adicionarCarrinho('Bolsa Prata Glam', 95)">Adicionar</button>
+    </div>
+
+    <div class="produto">
+      <img src="images/bolsasMulti.jpg"/>
+      <h3 class="nomeProduto">Bolsa Preta</h3>
+      <p class="preco">R$ 95</p>
+      <button class="botao" onclick="adicionarCarrinho('Bolsa Preta', 95)">Adicionar</button>
+    </div>
+
+    <div class="produto">
+      <img src="images/bolsaInfantil.jpg"/>
+      <h3 class="nomeProduto">Bolsa Infantil</h3>
+      <p class="preco">R$ 95</p>
+      <button class="botao" onclick="adicionarCarrinho('Bolsa Infantil', 95)">Adicionar</button>
+    </div>
+
+  </div>
+</div>
+
 <div id="carrinhoPreview">
   <button id="fecharCarrinho">✖</button>
   <h3>🛒 Seu Carrinho</h3>
   <div id="listaCarrinho"></div>
   <p id="totalCarrinho">Total: R$ 0</p>
-  <button onclick="finalizarCompra()" class="botao-finalizar">Finalizar no WhatsApp</button>
+  <button onclick="finalizarCompra()" class="botao-finalizar">
+    Finalizar no WhatsApp
+  </button>
 </div>
 
-<!-- WhatsApp fixo -->
-<a href="https://wa.me/5562999230895" class="whatsapp-fixo" target="_blank">
-  <i class="fa-brands fa-whatsapp"></i>
-</a>
-
-<!-- Notificação -->
+<!-- NOTIFICAÇÃO -->
 <div id="notificacao"></div>
-
-<footer class="footer">
-  <p>Desenvolvido por <strong>Plínio Peixoto</strong></p>
-  <div class="redes">
-    <a href="https://wa.me/5562998406502" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
-    <a href="https://instagram.com/pliniops_" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-  </div>
-</footer>
 
 <script src="script.js"></script>
 
 </body>
 </html>
-
-
 
 <!-- colocar essa bolsa infantil por ultimo pq ela é diferente -->
