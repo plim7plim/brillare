@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Brillare Jóias | Catálogo</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="icon" type="image/png" href="images/brillare.jpg" />
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="titulo">
+        <h1>Brillare Jóias</h1>
+        <p>Elegância e brilho para todos os momentos ✨</p>
+      </div>
+
+      <div class="acoes-header">
+        <button id="modoNoturno">🌙</button>
+
+        <div class="filtros">
+          <button class="ativo" onclick="filtrar('todos', event)">Todos</button>
+          <button onclick="filtrar('aneis', event)">Anéis</button>
+          <button onclick="filtrar('brincos', event)">Brincos</button>
+          <button onclick="filtrar('pulseiras', event)">Pulseiras</button>
+          <button onclick="filtrar('colares', event)">Colares</button>
+        </div>
+
+        <div class="carrinho-icone" onclick="toggleCarrinho()">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span id="contadorCarrinho">0</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- BRINCOS -->
+    <div class="secao brincos">
+      <h3 class="titulo-secao">Brincos</h3>
+      <div class="container">
+        <div class="produto">
+          <img src="images/brincoEstrelaSimples.jpg" />
+          <h3>Brinco Estrela</h3>
+          <p>R$ 35</p>
+          <button class="botao" onclick="adicionarCarrinho('Brinco Estrela Simples', 35)">Adicionar</button>
+        </div>
+
+        <div class="produto">
+          <img src="images/brincoCoracao.jpg" />
+          <h3>Brinco de Coração</h3>
+          <p>R$ 40</p>
+          <button class="botao" onclick="adicionarCarrinho('Brinco Coração', 40)">Adicionar</button>
+        </div>
+
+        <div class="produto">
+          <img src="images/brincoCravejado.jpg" />
+          <h3>Brinco Zircônia</h3>
+          <p>R$ 50</p>
+          <button class="botao" onclick="adicionarCarrinho('Brinco Zircônia', 50)">Adicionar</button>
+        </div>
+
+        <div class="produto">
+          <img src="images/brincoEstrelaMar.jpg" />
+          <h3>Brinco Pingente de Estrela</h3>
+          <p>R$ 60</p>
+          <button class="botao" onclick="adicionarCarrinho('Brinco Estrela', 60)">Adicionar</button>
+        </div>
+
+        <div class="produto">
+          <img src="images/brincoArvore.jpg" />
+          <h3>Brinco de Árvore Cravejada</h3>
+          <p>R$ 65</p>
+          <button class="botao" onclick="adicionarCarrinho('Brinco Árvore', 65)">Adicionar</button>
+        </div>
+
+        <div class="produto">
+          <img src="images/brincoFolheado.jpg" />
+          <h3>Brinco Folheado</h3>
+          <p>R$ 65</p>
+          <button class="botao" onclick="adicionarCarrinho('Brinco Folheado', 65)">Adicionar</button>
+        </div>
+
+        <div class="produto">
+          <img src="images/brincoRetro.jpg" />
+          <h3>Brinco Hera com Zircônias</h3>
+          <p>R$ 70</p>
+          <button class="botao" onclick="adicionarCarrinho('Brinco Hera', 70)">Adicionar</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ANÉIS -->
+    <div class="secao aneis">
+      <h3 class="titulo-secao">Anéis</h3>
+      <div class="container">
+        <div class="produto">
+          <img src="images/anelMinimalista.jpg" />
+          <h3>Anel Minimalista</h3>
+          <p>R$ 45</p>
+          <button class="botao" onclick="adicionarCarrinho('Anel Minimalista', 45)">Adicionar</button>
+        </div>
+
+        <div class="produto">
+          <img src="images/anelSolitarioVazado.jpg" />
+          <h3>Anel Solitário Vazado</h3>
+          <p>R$ 50</p>
+          <button class="botao" onclick="adicionarCarrinho('Anel Solitário Vazado', 50)">Adicionar</button>
+        </div>
+
+        <div class="produto">
+          <img src="images/anelTrevoFolheado.jpg" />
+          <h3>Anel Trevo Folheado</h3>
+          <p>R$ 55</p>
+          <button class="botao" onclick="adicionarCarrinho('Anel Trevo Folheado', 55)">Adicionar</button>
+        </div>
+
+        <div class="produto">
+          <img src="images/anelCoracaoVazado.jpg" />
+          <h3>Anel Coração Vazado</h3>
+          <p>R$ 55</p>
+          <button class="botao" onclick="adicionarCarrinho('Anel Coração Vazado', 55)">Adicionar</button>
+        </div>
+
+        <div class="produto">
+          <img src="images/anelCobra.jpg" />
+          <h3>Anel Cobra</h3>
+          <p>R$ 55</p>
+          <button class="botao" onclick="adicionarCarrinho('Anel Cobra', 55)">Adicionar</button>
+        </div>
+
+        <div class="produto">
+          <img src="images/anelCoracaoCravejado.jpg" />
+          <h3>Anel Coração Cravejado</h3>
+          <p>R$ 55</p>
+          <button class="botao" onclick="adicionarCarrinho('Anel Coração Cravejado', 55)">Adicionar</button>
+        </div>
+
+        <div class="produto">
+          <img src="images/anelTrevo.jpg" />
+          <h3>Anel Trevo</h3>
+          <p>R$ 55</p>
+          <button class="botao" onclick="adicionarCarrinho('Anel Trevo', 55)">Adicionar</button>
+        </div>
+
+        <div class="produto">
+          <img src="images/anelCoracao.jpg" />
+          <h3>Anel Coração</h3>
+          <p>R$ 60</p>
+          <button class="botao" onclick="adicionarCarrinho('Anel Coração', 60)">Adicionar</button>
+        </div>
+
+        <div class="produto">
+          <img src="images/anelMeiaAliancaSolitaria.jpg" />
+          <h3>Anel Meia Aliança Solitária</h3>
+          <p>R$ 60</p>
+          <button class="botao" onclick="adicionarCarrinho('Anel Meia Aliança Solitária', 60)">Adicionar</button>
+        </div>
+
+        <div class="produto">
+          <img src="images/anelCoracaoCheioVazado.jpg" />
+          <h3>Anel Coração Cheio Vazado</h3>
+          <p>R$ 85</p>
+          <button class="botao" onclick="adicionarCarrinho('Anel Coração Cheio Vazado', 85)">Adicionar</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- PULSEIRAS -->
+    <div class="secao pulseiras">
+      <h3 class="titulo-secao">Pulseiras</h3>
+      <div class="container">
+        <div class="produto">
+          <img src="images/pulseiraFolha.jpg" />
+          <h3>Pulseira Folha</h3>
+          <p>R$ 40</p>
+          <button class="botao" onclick="adicionarCarrinho('Pulseira Folha', 40)">Adicionar</button>
+        </div>
+
+        <div class="produto">
+          <img src="images/pulseiraMinima.jpg" />
+          <h3>Pulseira Mínima</h3>
+          <p>R$ 40</p>
+          <button class="botao" onclick="adicionarCarrinho('Pulseira Mínima', 40)">Adicionar</button>
+        </div>
+
+        <div class="produto">
+          <img src="images/pulseiraEntremeioAmor.jpg" />
+          <h3>Pulseira Entremeio Amor</h3>
+          <p>R$ 90</p>
+          <button class="botao" onclick="adicionarCarrinho('Pulseira Entremeio Amor', 90)">Adicionar</button>
+        </div>
+
+        <div class="produto">
+          <img src="images/pulseiraCoracaoZirconia.jpg" />
+          <h3>Pulseira Coração Zircônia</h3>
+          <p>R$ 100</p>
+          <button class="botao" onclick="adicionarCarrinho('Pulseira Coração Zircônia', 100)">Adicionar</button>
+        </div>
+
+        <div class="produto">
+          <img src="images/pulseiraCoracaoVazado.jpg" />
+          <h3>Pulseira Coração Vazado</h3>
+          <p>R$ 110</p>
+          <button class="botao" onclick="adicionarCarrinho('Pulseira Coração Vazado', 110)">Adicionar</button>
+        </div>
+
+        <div class="produto">
+          <img src="images/pulseiraOlhoCravejado.jpg" />
+          <h3>Pulseira Olho Cravejado</h3>
+          <p>R$ 110</p>
+          <button class="botao" onclick="adicionarCarrinho('Pulseira Olho Cravejado', 110)">Adicionar</button>
+        </div>
+
+        <div class="produto">
+          <img src="images/pulseiraMaoCravejada.jpg" />
+          <h3>Pulseira Mão Cravejada</h3>
+          <p>R$ 115</p>
+          <button class="botao" onclick="adicionarCarrinho('Pulseira Mão Cravejada', 115)">Adicionar</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- COLARES -->
+    <div class="secao colares">
+      <h3 class="titulo-secao">Colares</h3>
+      <div class="container">
+        <div class="produto">
+          <img src="images/colarPingenteCoracao.jpg" />
+          <h3>Colar Pingente Coração</h3>
+          <p>R$ 75</p>
+          <button class="botao" onclick="adicionarCarrinho('Colar Pingente Coração', 75)">Adicionar</button>
+        </div>
+
+        <div class="produto">
+          <img src="images/colarPingenteEstrela.jpg" />
+          <h3>Colar Pingente Estrela</h3>
+          <p>R$ 80</p>
+          <button class="botao" onclick="adicionarCarrinho('Colar Pingente Estrela', 80)">Adicionar</button>
+        </div>
+
+        <div class="produto">
+          <img src="images/colarPingenteCravejado.jpg" />
+          <h3>Colar Pingente Cravejado</h3>
+          <p>R$ 90</p>
+          <button class="botao" onclick="adicionarCarrinho('Colar Pingente Cravejado', 90)">Adicionar</button>
+        </div>
+
+        <div class="produto">
+          <img src="images/colarBorboleta.jpg" />
+          <h3>Colar Borboleta</h3>
+          <p>R$ 100</p>
+          <button class="botao" onclick="adicionarCarrinho('Colar Borboleta', 100)">Adicionar</button>
+        </div>
+
+        <div class="produto">
+          <img src="images/colarDetalheCravejado.jpg" />
+          <h3>Colar Detalhe Cravejado</h3>
+          <p>R$ 100</p>
+          <button class="botao" onclick="adicionarCarrinho('Colar Detalhe Cravejado', 100)">Adicionar</button>
+        </div>
+
+        <div class="produto">
+          <img src="images/colarTrevo.jpg" />
+          <h3>Colar Trevo</h3>
+          <p>R$ 100</p>
+          <button class="botao" onclick="adicionarCarrinho('Colar Trevo', 100)">Adicionar</button>
+        </div>
+
+        <div class="produto">
+          <img src="images/colarCruzCravejada.jpg" />
+          <h3>Colar Cruz Cravejada</h3>
+          <p>R$ 110</p>
+          <button class="botao" onclick="adicionarCarrinho('Colar Cruz Cravejada', 110)">Adicionar</button>
+        </div>
+
+        <div class="produto">
+          <img src="images/colarTodoCravejado.jpg" />
+          <h3>Colar Todo Cravejado</h3>
+          <p>R$ 110</p>
+          <button class="botao" onclick="adicionarCarrinho('Colar Todo Cravejado', 110)">Adicionar</button>
+        </div>
+
+        <div class="produto">
+          <img src="images/colarZirconiaAcqua.jpg" />
+          <h3>Colar Zircônia Acqua</h3>
+          <p>R$ 115</p>
+          <button class="botao" onclick="adicionarCarrinho('Colar Zircônia Acqua', 115)">Adicionar</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARRINHO -->
+    <div id="carrinhoPreview">
+      <button id="fecharCarrinho">✖</button>
+      <h3>🛒 Seu Carrinho</h3>
+      <div id="listaCarrinho"></div>
+      <p id="totalCarrinho">Total: R$ 0</p>
+      <button onclick="finalizarCompra()" class="botao-finalizar">Finalizar no WhatsApp</button>
+    </div>
+
+    <!-- MODAL ZOOM -->
+    <div id="imgModal" class="img-modal">
+      <span class="fechar-img" onclick="fecharImagem()">✖</span>
+      <img class="img-modal-conteudo" id="imgExpandida" />
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <p>Desenvolvido por <strong>Plínio Peixoto</strong></p>
+      <div class="redes">
+        <a href="https://wa.me/5562998406502" target="_blank">
+          <i class="fa-brands fa-whatsapp"></i>
+        </a>
+        <a href="https://instagram.com/pliniops_" target="_blank">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
